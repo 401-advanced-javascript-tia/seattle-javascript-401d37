@@ -16,8 +16,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.11",
     "base-64": "^0.1.0",
+<<<<<<< HEAD
     "bcrypt": "^5.0.0",
+=======
+    "bcrypt": "5.0.0",
+>>>>>>> c841571cb5e5477eddcd59c9d742bf5afb529c82
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
