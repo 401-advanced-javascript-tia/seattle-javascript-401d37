@@ -1,11 +1,12 @@
 'use strict';
 
-let base64 = require('base-64');
+let base64 = require('base-64'); 
+// 64 characters: azAZ09=.
 let bcrypt = require('bcrypt');
 
 console.log('\n---------------------- Base64 ------------------- \n');
 
-let string = 'someusername:P@55w0rD!'
+let string = 'someusername:P@55w0rD!';
 
 let encoded = base64.encode(string);
 let decoded = base64.decode(encoded);
@@ -18,17 +19,22 @@ console.log('\n---------------------- HASHING ------------------- \n');
 
 let password = 'P@55w0rD!';
 let complexity = 5;
+// this is the number of rounds of encryption. setting it to something like 50 would make your cop smoke
 
 encrypt(password, complexity);
 
 // It's recommended to use async for bcrypt as it's CPU intensive.
+// bcrypt is a one-way encryption scheme
+// SSID
 // In less taxed servers, you can opt to use hashSync and compareSync instead
 async function encrypt(pw, rounds) {
 
   // Generate a has from the plain text password, running it through the algorithm a few times
   let hashed1 = await bcrypt.hash(password, complexity);
 
-  // Here's a couple that were hahed previously from the above password.
+  console.log(hashed1);
+
+  // Here's a couple that were hashed previously from the above password.
   // Will these work?
   let p1 = '$2b$05$8udBhviWuSXVZ8H.CAQpj.lrrEeC1QGOmI/yUdTPVyNDNSzg8nS5i';
   let p2 = '$2b$05$7HvKpPuS9wpFZTXy4hanA.fJf2Vwn0gaSv/V.uU408EmIujtMtwCC';
