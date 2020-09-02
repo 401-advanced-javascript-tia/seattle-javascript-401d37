@@ -1,8 +1,8 @@
 'use strict';
 
-const io = require('socket.io-client');
+const ioClient = require('socket.io-client');
 
-const socket = io.connect('http://localhost:3000');
+const socket = ioClient.connect('http://localhost:3000');
 
 // Generic client
 // Doesn't connect to a namespace or join any rooms
