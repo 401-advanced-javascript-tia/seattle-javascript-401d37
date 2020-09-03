@@ -8,25 +8,10 @@ const socket = ioClient.connect('http://localhost:3000');
 // What code will trigger server to log...
 // console.log('received sunrise message', payload);
 
-<<<<<<< HEAD
 // socket.on take a string of event name and a function, the function takes a payload
 socket.on('sunrise', payload => {
   console.log('Oh what a beautiful morning', payload);
 })
-=======
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -53,4 +38,3 @@ socket.on('fire', (payload) => {
 */
 
 
->>>>>>> f894aa4ef32f494629ba609d0c5ccb1291f50502
