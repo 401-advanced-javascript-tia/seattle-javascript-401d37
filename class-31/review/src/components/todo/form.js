@@ -1,4 +1,7 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
 
 class TodoForm extends React.Component {
 
@@ -7,7 +10,7 @@ class TodoForm extends React.Component {
     this.state = { item: {} };
   }
   handleInputChange = e => {
-    this.setState({ item: {...this.state.item, [e.target.name]: e.target.value } });
+    this.setState({ item: { ...this.state.item, [e.target.name]: e.target.value } });
   };
 
   handleSubmit = (e) => {
@@ -15,10 +18,36 @@ class TodoForm extends React.Component {
     e.target.reset();
     this.props.handleSubmit(this.state.item);
     const item = {};
-    this.setState({item});
+    this.setState({ item });
   };
 
   render() {
+    return (
+      <Card>
+        <Card.Body>
+
+      <Form>
+        <Form.Group controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Text className="text-muted">
+            We'll never share your email with anyone else.
+    </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formDifficulty">
+          <Form.Control type="range" min="0" max="5" />
+        </Form.Group>
+
+        <Button variant="primary" type="submit">
+          Submit
+  </Button>
+      </Form>
+        </Card.Body>
+      </Card>
+    )
+  }
+  renderx() {
     return (
       <>
         <h3>Add Item</h3>
